@@ -8,6 +8,11 @@ class TracksController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    Track.destroy(params[:id])
+    redirect_to root_path
+  end
+
   private
 
   def track_params

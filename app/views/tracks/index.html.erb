@@ -8,9 +8,9 @@
           <%= embed(track.link) %>
           <div class="card-block">
             <div class="btn-group">
-              <%= link_to "A", "#", class: 'btn btn-success' %>
-              <%= link_to "A", "#", class: 'btn btn-info' %>
-              <%= link_to "X", "#", class: 'btn btn-danger' %>
+              <%# link_to "A", "#", class: 'btn btn-success' %>
+              <%# link_to "A", "#", class: 'btn btn-info' %>
+              <%= link_to fa_icon('trash'), track,  method: :delete, class: 'btn btn-danger' %>
             </div>
           </div>
         </div>

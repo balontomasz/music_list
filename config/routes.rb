@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root to: "tracks#index"
-  resources :tracks, only: [:create]
+  resources :tracks, only: [:create, :destroy]
 end
