@@ -1,12 +1,20 @@
-<%= form_for Track.new do |f| %>
-  <%= f.label :link %>:
-  <%= f.text_field :link %><br />
-  <%= f.submit "Add" %>
-<% end %>
 
-<h1>Tracks:</h1>
-<ol>
-  <% @tracks.each do |track| %>
-    <%= embed(track.link) %>
-  <% end %>
-</ol>
+
+<div class="row">
+  <ol>
+    <% @tracks.each do |track| %>
+      <div class="col-md-4">
+        <div class="card">
+          <%= embed(track.link) %>
+          <div class="card-block">
+            <div class="btn-group">
+              <%= link_to "A", "#", class: 'btn btn-success' %>
+              <%= link_to "A", "#", class: 'btn btn-info' %>
+              <%= link_to "X", "#", class: 'btn btn-danger' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </ol>
+</div>

@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
   def index
-    @tracks = Track.all
+    @tracks = Track.all.order(created_at: :desc)
   end
 
   def create

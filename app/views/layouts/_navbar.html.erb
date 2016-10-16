@@ -1,0 +1,6 @@
+<nav class="navbar navbar-light bg-faded">
+  <%= form_for Track.new, html: { class: 'form-inline' } do |f| %>
+    <%= f.text_field :link, class: "form-control link-input" %>
+    <%= f.submit "Add Track", class: 'btn btn-outline-success' %>
+  <% end %>
+</nav>
