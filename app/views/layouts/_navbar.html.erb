@@ -1,5 +1,16 @@
 <nav class="navbar navbar-light bg-faded">
-  <%= form_for Track.new, html: { class: 'form-inline' } do |f| %>
+  <ul class="nav navbar-nav">
+    <li class="nav-item active">
+      <%= link_to "Pending", root_path(filter_type: :pending), class: 'btn btn-secondary' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Accepted", root_path(filter_type: :accepted), class: 'btn btn-secondary' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Rejected", root_path(filter_type: :rejected), class: 'btn btn-secondary' %>
+    </li>
+  </ul>
+  <%= form_for Track.new, html: { class: 'form-inline pull-xs-right' } do |f| %>
     <%= f.text_field :link, class: "form-control link-input" %>
     <%= f.button fa_icon('paper-plane'), type: 'submit', class: 'btn btn-outline-success' %>
   <% end %>

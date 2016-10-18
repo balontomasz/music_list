@@ -1,6 +1,14 @@
 class TracksController < ApplicationController
   def index
-    @tracks = Track.all.order(created_at: :desc)
+    filter_type = params[:filter_type].to_s
+    @tracks =  case filter_type.to_sym
+               when :accepted
+                 Track.accepted.order(created_at: :desc)
+               when :rejected
+                 Track.rejected.order(created_at: :desc)
+               else
+                 Track.pending.order(created_at: :desc)
+               end
   end
 
   def create
